@@ -13,11 +13,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView rollButton = findViewById(R.id.button);
-        rollButton.setOnClickListener(rollDice());
     }
 
-    private View.OnClickListener rollDice() {
+    public void rollDice() {
         Random rand = new Random();
         int Dice = rand.nextInt(6);
         ImageView diceImg = findViewById(R.id.imageView);
@@ -38,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
         }
+    }
+
+    public void onButtonClick(View view) {
+        rollDice();
     }
 }
 
